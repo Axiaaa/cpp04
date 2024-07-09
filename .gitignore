@@ -1,1 +1,7 @@
 /.vscode
+.build/*
+/.build/
+*.o
+Abstractnimal
+Animal
+AnimalWithBrain
