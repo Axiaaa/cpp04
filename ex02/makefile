@@ -18,7 +18,6 @@ $(DIR)/%.o: %.cpp
 $(DIR):
 	mkdir -p $(DIR)
 
-
 clean:
 	rm -fr $(DIR)
 

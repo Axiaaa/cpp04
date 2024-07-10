@@ -8,8 +8,7 @@ WrongAnimal::~WrongAnimal() {
     std::cout << "WrongAnimal destroyed\n";
 }
 
-WrongAnimal::WrongAnimal(const WrongAnimal& copy)
-{
+WrongAnimal::WrongAnimal(const WrongAnimal& copy) {
     std::cout << "New WrongAnimal copy created\n";
     *this = copy;
 };

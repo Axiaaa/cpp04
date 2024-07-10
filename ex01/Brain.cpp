@@ -9,9 +9,7 @@ Brain::~Brain() {
     std::cout << "A brain is destroyed\n";
 }
 
-Brain::Brain(const Brain& copy) {
-    *this = copy;
-}
+Brain::Brain(const Brain& copy) {   *this = copy;   }
 
 Brain& Brain::operator=(const Brain& rhs) {
     if (this != &rhs)
