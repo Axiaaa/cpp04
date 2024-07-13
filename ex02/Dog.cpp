@@ -7,9 +7,11 @@ void Dog::makeSound() const {
 Dog::Dog() {
     std::cout << "New dog created\n";
     Animal::type = "Dog";
+    this->brain = new Brain();
 }
 
 Dog::~Dog() {
+    delete this->brain;
     std::cout << "Dog destroyed\n";
 }
 

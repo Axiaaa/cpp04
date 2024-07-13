@@ -3,26 +3,28 @@
 #include "Cat.hpp"
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
+#include "cstdlib"
 
-int main()
+int main(int ac, char **av)
 {
-    const WrongAnimal* i = new WrongCat();
-    const Animal* j = new Dog();
-    const Animal* k = new Cat();
-    const WrongAnimal* meta2 = new WrongAnimal(*i);
 
-    std::cout << i->getType() << " " << std::endl;
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << k->getType() << " " << std::endl;   
-    std::cout << meta2->getType() << " " << std::endl;
-    i->makeSound();
-    j->makeSound();
-    k->makeSound();
-    meta2->makeSound();
+    int len = 0;
 
-    delete j;
-    delete i;
-    delete k;
-    delete meta2;
+    if (ac != 2)
+        len = 50;
+    else 
+        len = atoi(av[1]) > 0 ? atoi(av[1]) : abs(atoi(av[1])) ;
+
+    Animal **list = new Animal*[len];
+    //Animal a; //Doesn't work if uncomment -> Abstract class
+
+    int i = 0;
+    for (i = 0; i < (len / 2); i++)
+        list[i] = new Dog();
+    for (; i < len; i++)
+        list[i] = new Cat();
+    for (int i = 0; i < len; i++)
+        delete list[i];
+    delete[] list;
     return 0;
 }

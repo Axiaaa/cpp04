@@ -1,6 +1,6 @@
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal() {
+WrongAnimal::WrongAnimal() : type("Wrong Animal") {
     std::cout << "New WrongAnimal created\n";
 }
 
@@ -23,5 +23,5 @@ WrongAnimal& WrongAnimal::operator=(const WrongAnimal& rhs) {
 string WrongAnimal::getType() const { return this->type; }
 
 void WrongAnimal::makeSound() const {
-    std::cout << "I'm a WrongAnimal sound ;-;\n";
+    std::cout << "i'm a wrong animal sound ;-;\n";
 }

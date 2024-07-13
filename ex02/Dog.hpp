@@ -2,6 +2,7 @@
 #define DOG_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Dog : public Animal {
 
@@ -12,6 +13,9 @@ class Dog : public Animal {
         Dog(const Dog&);
         Dog& operator=(const Dog& rhs);
         string getType();
+
+    private :
+        Brain* brain;
 };
 
 

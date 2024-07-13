@@ -2,7 +2,7 @@
 #define ANIMAL_HPP
 
 #include <iostream>
-#define string std::string
+using std::string; 
 
 class Animal {
 

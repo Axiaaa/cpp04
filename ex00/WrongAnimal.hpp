@@ -11,7 +11,7 @@ class WrongAnimal {
         WrongAnimal(const WrongAnimal&);
         WrongAnimal& operator=(const WrongAnimal& rhs);
         string getType() const;
-        virtual void makeSound() const;
+        void makeSound() const;
 
     protected :
         string type;

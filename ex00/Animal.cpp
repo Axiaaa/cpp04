@@ -1,6 +1,6 @@
 #include "Animal.hpp"
 
-Animal::Animal() {
+Animal::Animal(): type("Animal") {
     std::cout << "New animal created\n"; 
 }
 
@@ -23,9 +23,5 @@ Animal& Animal::operator=(const Animal& rhs) {
 string Animal::getType() const { return this->type; }
 
 void Animal::makeSound() const {
-
-    string  answer;
-    std::cout << "... ... ... Dude I'm a animal but I don't know which one so tell me which sound to make\n";
-    getline(std::cin, answer);
-    std::cout << answer << "\n";
+    ;
 }

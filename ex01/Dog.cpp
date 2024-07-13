@@ -11,8 +11,8 @@ Dog::Dog() {
 }
 
 Dog::~Dog() {
-    std::cout << "Dog destroyed\n";
     delete this->brain;
+    std::cout << "Dog destroyed\n";
 }
 
 

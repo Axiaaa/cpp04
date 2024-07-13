@@ -6,7 +6,7 @@ void Cat::makeSound() const {
 
 Cat::Cat() {
     std::cout << "New cat created\n";
-    Animal::type = "Cat";
+    this->type = "Cat";
 }
 
 Cat::~Cat() {

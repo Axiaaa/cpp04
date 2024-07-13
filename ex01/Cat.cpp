@@ -11,8 +11,8 @@ Cat::Cat() {
 }
 
 Cat::~Cat() {
-    std::cout << "Cat destroyed\n";
     delete this->brain;
+    std::cout << "Cat destroyed\n";
 }
 
 Cat& Cat::operator=(const Cat& rhs) {

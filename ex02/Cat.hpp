@@ -2,6 +2,7 @@
 #define CAT_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Cat : public Animal {
     
@@ -12,6 +13,10 @@ class Cat : public Animal {
         Cat(const Cat&);
         Cat& operator=(const Cat& rhs);
         string getType();
+        
+    private :
+        Brain* brain;
+        
 };
 
 #endif

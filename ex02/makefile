@@ -1,5 +1,5 @@
-NAME = Abstractnimal
-SRCS = main.cpp Animal.cpp WrongAnimal.cpp WrongCat.cpp Dog.cpp Cat.cpp
+NAME = AnimalWithBrain
+SRCS = main.cpp Animal.cpp WrongAnimal.cpp WrongCat.cpp Dog.cpp Cat.cpp Brain.cpp
 OBJS = $(SRCS:.cpp=.o)
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
@@ -17,6 +17,7 @@ $(DIR)/%.o: %.cpp
 
 $(DIR):
 	mkdir -p $(DIR)
+
 
 clean:
 	rm -fr $(DIR)
