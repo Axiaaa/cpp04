@@ -4,6 +4,7 @@ OBJS = $(SRCS:.cpp=.o)
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 DIR = .build
+INC = Animal.hpp WrongAnimal.hpp WrongCat.hpp Dog.hpp Cat.hpp Brain.hpp
 OBJS := $(addprefix $(DIR)/, $(OBJS))
 
 
@@ -12,7 +13,7 @@ all: $(NAME)
 $(NAME): $(DIR) $(OBJS)
 	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
-$(DIR)/%.o: %.cpp
+$(DIR)/%.o: %.cpp $(INC)
 	$(CC) $(FLAGS) -c $< -o $@
 
 $(DIR):
