@@ -1,0 +1,3 @@
+header protection 
+Fix assignation "While assigning a Materia to another, copying the type doesn’t make sense."
+Use implementation
