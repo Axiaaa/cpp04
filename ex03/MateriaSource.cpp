@@ -22,6 +22,10 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& rhs) {
 }
 
 void MateriaSource::learnMateria(AMateria* m) {
+    if (!m) {
+        std::cout << "Cannot learn a null AMateria\n";
+        return ;
+    }
     for (int i = 0; i < 4; i++)
         if (this->memory[i] == NULL) {
             this->memory[i] = m; 
