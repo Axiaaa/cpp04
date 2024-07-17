@@ -32,8 +32,9 @@ void MateriaSource::learnMateria(AMateria* m) {
 
 AMateria* MateriaSource::createMateria(string const & type) {
     for (int i = 0; i < 4; i++)
-        if (type == memory[i]->getType())
-            return memory[i]->clone();
-    std::cout << "Can't create " << type << ". The type is unknown";
+        if (memory[i])
+            if (type == memory[i]->getType())
+                return memory[i]->clone();
+    std::cout << "Can't create " << type << ". The type is unknown\n";
     return NULL;
 }

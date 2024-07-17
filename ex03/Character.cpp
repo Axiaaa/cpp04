@@ -15,9 +15,9 @@ Character::Character(const string s) : name(s) {
 }
 
 Character::~Character() {
-    for (int i = 0; i < 4; i++) {
-        if (this->inventory[i] != NULL)
-            delete this->inventory[i];
+    for (int i = 0; i < 4; ++i) {
+        if (this->inventory[i] != NULL) {
+            delete this->inventory[i];}
         if (this->floor[i] != NULL)
             delete this->floor[i];
     }
@@ -48,6 +48,14 @@ void Character::equip(AMateria* m) {
 }
 
 void Character::unequip(int idx) {
+    if (idx < 0 || idx > 3) {
+        std::cout << "The index is invalid\n";
+        return ; 
+    }
+    if (this->inventory[idx] == NULL) {
+        std::cout << "Cannot unequip nothing\n";
+        return ; 
+    }
     for (int i = 0; i < 4; i++)
         if (this->floor[i] == NULL) {
             this->floor[i] = this->inventory[idx];
@@ -58,6 +66,14 @@ void Character::unequip(int idx) {
 }
 
 void Character::use(int idx, ICharacter& target) {
+     if (idx < 0 || idx > 3) {
+        std::cout << "The index is invalid\n";
+        return ; 
+    }
+    if (this->inventory[idx] == NULL) {
+        std::cout << "Cannot use nothing\n";
+        return ; 
+    }
     this->inventory[idx]->use(target);
 }
 
