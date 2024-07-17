@@ -20,7 +20,4 @@ Ice& Ice::operator=(const Ice& rhs) {
     return *this;
 }
 
-AMateria* Ice::clone() const {
-    return new Ice(*this);
-}
-
+AMateria* Ice::clone() const {  return new Ice(*this); }
