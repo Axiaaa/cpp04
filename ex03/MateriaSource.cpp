@@ -5,7 +5,11 @@ MateriaSource::MateriaSource() {
         this->memory[i] = NULL;
 }
 
-MateriaSource::~MateriaSource () {}
+MateriaSource::~MateriaSource () {
+    for (int i = 0; i < 4; i++)
+        if (this->memory[i] != NULL)
+            delete this->memory[i];
+}
 
 MateriaSource::MateriaSource(const MateriaSource& copy) {
     *this = copy;
@@ -31,4 +35,5 @@ AMateria* MateriaSource::createMateria(string const & type) {
         if (type == memory[i]->getType())
             return memory[i]->clone();
     std::cout << "Can't create " << type << ". The type is unknown";
+    return NULL;
 }

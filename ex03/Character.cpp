@@ -7,9 +7,21 @@ Character::Character() {
         this->floor[i] = NULL;
 }
 
-Character::Character(const string s) : name(s) {}
+Character::Character(const string s) : name(s) {
+    for (int i = 0; i < 4; ++i)
+        this->inventory[i] = NULL;
+    for (int i = 0; i < 4; ++i)
+        this->floor[i] = NULL;
+}
 
-Character::~Character() {}
+Character::~Character() {
+    for (int i = 0; i < 4; i++) {
+        if (this->inventory[i] != NULL)
+            delete this->inventory[i];
+        if (this->floor[i] != NULL)
+            delete this->floor[i];
+    }
+}
 
 Character& Character::operator=(const Character& rhs) {
     if (this != &rhs) {
@@ -27,7 +39,7 @@ Character::Character(const Character& copy) {
 }
 
 void Character::equip(AMateria* m) {
-    for (int i = 0; i < 4; ++i)
+    for (int i = 0; i < 4; i++)
         if (this->inventory[i] == NULL) {
             this->inventory[i] = m;
             return ;
@@ -36,7 +48,7 @@ void Character::equip(AMateria* m) {
 }
 
 void Character::unequip(int idx) {
-    for (int i = 0; i < 4; ++i)
+    for (int i = 0; i < 4; i++)
         if (this->floor[i] == NULL) {
             this->floor[i] = this->inventory[idx];
             this->inventory[idx] = NULL;

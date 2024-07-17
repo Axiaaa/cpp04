@@ -14,6 +14,7 @@ class Ice : public AMateria {
         Ice(const Ice&);
 
         virtual AMateria* clone() const;
+        void use(ICharacter& target);
 };
 
 

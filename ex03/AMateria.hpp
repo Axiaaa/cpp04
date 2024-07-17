@@ -2,10 +2,11 @@
 #define AMATERIA_HPP
 
 #include <iostream>
-#include "ICharacter.hpp"
 
 using std::string;
 
+#include "ICharacter.hpp"
+class ICharacter;
 class AMateria
 {
     protected : 
@@ -14,7 +15,7 @@ class AMateria
     public :
     AMateria(std::string const & type);
     AMateria();
-    ~AMateria();
+    virtual ~AMateria();
     AMateria& operator=(const AMateria& rhs);
     AMateria(const AMateria&);
     string const & getType() const; //Returns the materia type

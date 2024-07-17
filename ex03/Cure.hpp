@@ -13,6 +13,7 @@ class Cure : public AMateria {
         Cure(const Cure&);
 
         virtual AMateria* clone() const;
+        void use(ICharacter& target);
 };
 
 
