@@ -26,8 +26,12 @@ Character::~Character() {
 Character& Character::operator=(const Character& rhs) {
     if (this != &rhs) {
         for (int i = 0; i < 4; i++) {
-            this->floor[i] = rhs.floor[i];
-            this->inventory[i] = rhs.inventory[i];
+            if (this->inventory[i] != NULL) {
+                delete this->inventory[i];
+                this->inventory[i] = NULL;
+            }
+            if (rhs.inventory[i] != NULL)
+                this->inventory[i] = rhs.inventory[i]->clone();
         }
         this->name = rhs.name;
     }
